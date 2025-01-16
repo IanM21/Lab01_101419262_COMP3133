@@ -6,10 +6,10 @@ const filePath = 'input_countries.csv';
 fs.createReadStream(filePath)
     .pipe(csv())
     .on('data', (row) => {
-        console.log(row);
+        //console.log(row);
     })
     .on('end', () => {
-        console.log('CSV file successfully processed');
+        //console.log('CSV file successfully processed');
     });
 
 // Delete canada.txt and usa.txt files if they exist
@@ -48,4 +48,9 @@ fs.createReadStream(filePath)
                 }
             });
         }
+    })
+    .on('end', () => {
+        console.log('Canada.txt created and data written');
+        console.log('USA.txt created and data written');
     });
+    
